@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjetoEscola
 {
     /// <summary>
-    /// Interação lógica para MainWindow.xam
+    /// Lógica interna para Cadastrar_escola.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Cadastrar_escola : Window
     {
-        public MainWindow()
+        public Cadastrar_escola()
         {
             InitializeComponent();
-        }
-
-        private void bntCadastrar_Click(object sender, RoutedEventArgs e)
-        {
-            Cadastrar_escola obj = new Cadastrar_escola();
-            obj.ShowDialog();
         }
     }
 }
