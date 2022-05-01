@@ -1,2 +1,2 @@
-# Projeto-Escola
-Software para escola
+# System_Escola
+Atividade de um sistema escolar
