@@ -33,7 +33,7 @@ namespace System_Escola.Views
             if ((bool)rd_publico.IsChecked)
                 tipo = "Publico";
 
-            var conexao = new MySqlConnection("server=localhost;database=bd_escola;port=3360;user=root;password=root");
+            var conexao = new MySqlConnection("server=localhost;database=bd_escola;port=3306;user=root;password=1234");
 
             try
             {
@@ -67,6 +67,10 @@ namespace System_Escola.Views
 
                 var resultado = comando.ExecuteNonQuery();
 
+                if(resultado > 0)
+                {
+                    MessageBox.Show("Salvo com Sucesso");
+                }
             }
             catch (Exception ex)
             {
