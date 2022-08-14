@@ -25,7 +25,9 @@ namespace System_Escola.Views
 
         public CadastroCurso()
         {
+
             InitializeComponent();
+            CarregarListagem();
             Loaded += CadastroCurso_Loaded;
         }
 
@@ -33,6 +35,7 @@ namespace System_Escola.Views
         {
             InitializeComponent();
             _cadastro = curso;
+            CarregarListagem();
             Loaded += CadastroCurso_Loaded;
         }
 
@@ -43,10 +46,6 @@ namespace System_Escola.Views
             txtCargaHoraria.Text = _cadastro.CargaHoraria;
             cbTurno.Text = _cadastro.Turno;
         }
-
-     
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -80,6 +79,22 @@ namespace System_Escola.Views
         {
             ListaCurso cha = new ListaCurso();
             cha.ShowDialog();
+        }
+
+
+        private void CarregarListagem()
+        {
+            try
+            {
+                var dao = new EscolaDAO();
+                List<Escola> listaEscolas = dao.List();
+
+                cbEscola.ItemsSource = listaEscolas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

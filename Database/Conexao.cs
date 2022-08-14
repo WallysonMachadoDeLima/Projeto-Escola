@@ -12,11 +12,11 @@ namespace System_Escola.Database
     {
         private static string host = "localhost";
 
-        private static string port = "3360";
+        private static string port = "3306";
 
         private static string user = "root";
 
-        private static string password = "root";
+        private static string password = "1234";
 
         private static string dbname = "bd_escola";
 

@@ -18,6 +18,8 @@ namespace System_Escola.Models
 
         public string Turno { get; set; }
 
+        public Escola escola { get; set; }
+
           /*
             create table Curso (
             id_cur int primary key auto_increment,

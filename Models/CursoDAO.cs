@@ -73,12 +73,13 @@ namespace System_Escola.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "INSERT INTO curso VALUES" +
-                "(null, @nome, @descricao, @carga_horaria, @turno);";
+                "(null, @nome, @descricao, @carga_horaria, @turno, @escola);";
 
                 comando.Parameters.AddWithValue("@nome", cadastro.Nome);
                 comando.Parameters.AddWithValue("@descricao", cadastro.Descricao);
                 comando.Parameters.AddWithValue("@carga_horaria", cadastro.CargaHoraria);
                 comando.Parameters.AddWithValue("@turno", cadastro.Turno);
+                comando.Parameters.AddWithValue("@escola", cadastro.escola);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -92,6 +93,7 @@ namespace System_Escola.Models
                 throw ex;
             }
         }
+
 
         public List<Curso> List()
         {
